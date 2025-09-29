@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>LED点灯チャレンジ</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .info { margin-top: 10px; color: gray; }
+        .result { margin-top: 20px; font-size: 1.2em; }
+        .led-status { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Raspberry Pi Pico LED Challenge</h1>
+    <p class="info">※ 解答は <strong>3回まで</strong> 可能です。</p>
+
+    <form method="POST">
+        <label for="pin">ピン番号を入力:</label><br>
+        <input type="text" name="pin" id="pin" required><br><br>
+        <button type="submit">送信</button>
+    </form>
+
+    <div class="led">
+        {% if led_on %}
+            <img src="{{ url_for('static', filename='led_on.png') }}" alt="LED ON" width="100">
+        {% else %}
+            <img src="{{ url_for('static', filename='led_off.png') }}" alt="LED OFF" width="100">
+        {% endif %}
+    </div>
+    {% if result %}
+        <p class="result">{{ result }}</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+flag{JohnInTheBox8657}
+target-user: matsuki
+hash-count: 1000
+fp-count: 1000
+high-iter-ratio: 0.5
